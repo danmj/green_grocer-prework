@@ -17,3 +17,4 @@ def apply_coupons(cart, coupons)
   end
   cart.merge(coupons_applied)
 end
+
