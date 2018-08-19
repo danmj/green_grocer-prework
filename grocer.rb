@@ -14,7 +14,7 @@ def consolidate_cart(cart)
     end
   end
   output
-end	end
+end
 
 def apply_coupons(cart, coupons)
   coupons_applied = {}
