@@ -1,8 +1,20 @@
 def consolidate_cart(cart)
-  consolidated_cart = {}
-  cart.each { |grocery| grocery.each { |product,values| consolidated_cart[product] = {price: values[:price], clearance: values[:clearance], count: cart.count(grocery)} } }
-  consolidated_cart
-end
+  cart_uniq = cart.uniq
+  output = Hash.new{|output,key| output[key] =0}
+  cart_uniq.each do |item|
+    item.each do |key,value|
+      output[key]=value
+      output[key][:count] = 0
+    end
+  end
+  cart.each do |item|
+    item.each do |key,value|
+#      output[key]=value
+      output[key][:count] += 1 if output.has_key?(key)
+    end
+  end
+  output
+end	end
 
 def apply_coupons(cart, coupons)
   coupons_applied = {}
