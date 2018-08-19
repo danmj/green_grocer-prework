@@ -9,7 +9,7 @@ def consolidate_cart(cart)
   end
   cart.each do |item|
     item.each do |key,value|
-#      output[key]=value
+      output[key]=value
       output[key][:count] += 1 if output.has_key?(key)
     end
   end
