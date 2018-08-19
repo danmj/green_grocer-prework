@@ -18,7 +18,7 @@ def apply_coupons(cart, coupons)
   cart.merge(coupons_applied)
 end
 
-def apply_clearance(cart: [])
+def apply_clearance(cart:)
   cart.each {|grocery,value| cart[grocery][:price] = (cart[grocery][:price] * 0.8).round(2) if cart[grocery][:clearance] }
 end
 
