@@ -47,9 +47,8 @@ def apply_clearance(cart)
 end
 
 def checkout(cart: [], coupons: [])
-  # code here
   new_cart = apply_clearance(apply_coupons(consolidate_cart(cart),coupons))
   sum = 0
   new_cart.each{|key,value| sum += value[:count]*value[:price]}
   sum > 100 ? sum*0.9.round(2) : sum.round(2)
-end	end
+end
