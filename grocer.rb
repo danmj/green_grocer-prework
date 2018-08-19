@@ -1,4 +1,5 @@
 def consolidate_cart(cart)
+  # code here
   cart_uniq = cart.uniq
   output = Hash.new{|output,key| output[key] =0}
   cart_uniq.each do |item|
@@ -9,7 +10,7 @@ def consolidate_cart(cart)
   end
   cart.each do |item|
     item.each do |key,value|
-      output[key]=value
+#      output[key]=value
       output[key][:count] += 1 if output.has_key?(key)
     end
   end
@@ -17,6 +18,7 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+  # code here
   output = {}
   cart.each do |key,value|
     coupons.each do |coupon|
@@ -46,7 +48,8 @@ def apply_clearance(cart)
   cart
 end
 
-def checkout(cart: [], coupons: [])
+def checkout(cart, coupons)
+  # code here
   new_cart = apply_clearance(apply_coupons(consolidate_cart(cart),coupons))
   sum = 0
   new_cart.each{|key,value| sum += value[:count]*value[:price]}
