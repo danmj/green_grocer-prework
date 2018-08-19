@@ -16,4 +16,4 @@ def apply_coupons(cart:[], coupons:[])
     end
   end
   cart.merge(coupons_applied)
-end	end
+end
