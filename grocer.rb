@@ -44,7 +44,7 @@ def apply_clearance(cart)
   # code here
   cart.collect{|key,value| value[:price] = (value[:price]*0.8).round(2) if value[:clearance] == true}
   cart
-end	end
+end
 
 def checkout(cart: [], coupons: [])
   cart = consolidate_cart(cart: cart)
